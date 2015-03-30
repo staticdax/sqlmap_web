@@ -74,7 +74,7 @@ $(document).ready(function(){
         var formParam = $("#form1").serialize();
         if($("[name=target_url]").val()!=""){
             $.ajax({
-                url:'test.php',
+                url:'handler.php',
                 type:'post',
                 data:formParam,
                 async:true,

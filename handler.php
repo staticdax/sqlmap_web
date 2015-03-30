@@ -2,8 +2,14 @@
     include './request_function.php';
 	//$api_request = array('url'=>'','getDbs'=>False,'getTables'=>False,'getColumns'=>False);
 
+    function clean($text)
+    {
+        $text = trim( preg_replace( '/\s+/', ' ', $text ) );  
+        $text = preg_replace("/(\r\n|\n|\r|\t)/i", '', $text);
+        return $text;
+    }
 
-    $api_request = array(
+/*    $api_request = array(
     "crawlDepth"=> "", 
     "osShell"=> False, 
     "getUsers"=> False, 
@@ -173,7 +179,9 @@
     "commonColumns"=> False, 
     "keepAlive"=> False
 );
+ */
 
+    $api_request = array();
 
 	$target_url = $_POST['target_url'];
 
@@ -200,10 +208,12 @@
 	$api_json = json_encode($api_request,JSON_UNESCAPED_SLASHES);
 	//var_dump($api_json);
 
-    $req = array(
-        'getDbs' => true,
-        'url' => 'http://www.aradergalleries.com/catgallery.php?id=2'
-    );
+    //$req = array(
+        //'getDbs' => true,
+        //'url' => 'http://www.aradergalleries.com/catgallery.php?id=2'
+    //);
+
+    $api_json = json_encode($api_request,JSON_UNESCAPED_SLASHES);
 
     $new_task_result = json_decode(new_task(),true);
     if($new_task_result['success'] == 'true'){
