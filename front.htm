@@ -2,6 +2,7 @@
 <title>
 SQLMAP_WEB Interface v0.1
 </title>
+<<<<<<< HEAD
 <body>
 	<head>
 		<center>SQLMAP_WEB Interface v0.1</center>
@@ -18,6 +19,58 @@ SQLMAP_WEB Interface v0.1
 				<input type="submit" value="执行" name="submit_btn">
 		</form>
 		</div>
+=======
+<script src="http://lib.sinaapp.com/js/jquery/2.0.3/jquery-2.0.3.js">
+</script>
+<body>
+	<head>
+        <center>SQLMAP_WEB Interface v0.1</center>
+	</head>
+	<hr>
+        <div class="">
+            <form method="POST" enctype="multipart/form-data" action="" id="form1">
+                <label>目标url</label>
+                <input type="text"  name="target_url"><br>
+                <label><input type="checkbox" name="getDbs"> getDbs</label>
+              	<label><input type="checkbox" name="getTables"> getTables</label>
+                <label><input type="checkbox" name="getColumns"> getColumns</label>
+                <br>
+            </form>
+            <label>
+                <input type="submit" value="执行" name="submit_btn">
+            </label>
+        </div>
+
+        <div>
+            <label>current_task_id:</label>
+            <label id="current_task_id"></label>
+            <br>
+            <button name="scan_log">scan_log</button>
+            <button name="scan_data">scan_data</button>
+            <button name="scan_status">scan_status</button>
+        </div>
+        <div name="display_area">
+            
+        </div>
+        <div>
+            <br>
+            <label>admin_list</label>
+            <hr>
+            <div id="admin_list">
+            </div>
+            <hr>
+        </div>
+
+
+        <input type="submit" value="ajax_test" name="ajax_test">
+        <div id="ajax_result"></div>
+        <script src="./front.js"></script>
+        <script type="text/javascript">
+            $("button#b6fd2c99c033754c").click(function(){                                                                                                   
+                $("#current_task_id").html("hee");
+            });
+        </script>
+>>>>>>> 591922c0e4b12d3db317fac6cfde4f569b59a72d
 </body>
 
 </html>

@@ -80,8 +80,13 @@
         'getDbs' => True,
         'url' => 'http://www.aradergalleries.com/catgallery.php?id=2'
     );
+<<<<<<< HEAD
     $req_json = json_encode($req,JSON_UNESCAPED_SLASHES);
     echo $req_json;
+=======
+    //$req_json = json_encode($req,JSON_UNESCAPED_SLASHES);
+    //echo $req_json;
+>>>>>>> 591922c0e4b12d3db317fac6cfde4f569b59a72d
 
     //scan_start('71f9961ad5cdfb74',$req_json);
     //echo(scan_status('71f9961ad5cdfb74',$req_json));
