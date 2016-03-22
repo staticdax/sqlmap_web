@@ -200,10 +200,10 @@
 	$api_json = json_encode($api_request,JSON_UNESCAPED_SLASHES);
 	//var_dump($api_json);
 
-    $req = array(
-        'getDbs' => true,
-        'url' => 'http://www.aradergalleries.com/catgallery.php?id=2'
-    );
+    //$req = array(
+        //'getDbs' => true,
+        //'url' => 'http://www.aradergalleries.com/catgallery.php?id=2'
+    //);
 
     $new_task_result = json_decode(new_task(),true);
     if($new_task_result['success'] == 'true'){
