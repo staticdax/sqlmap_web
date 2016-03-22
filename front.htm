@@ -1,0 +1,23 @@
+<html>
+<title>
+SQLMAP_WEB Interface v0.1
+</title>
+<body>
+	<head>
+		<center>SQLMAP_WEB Interface v0.1</center>
+	</head>
+	<hr>
+		<div class="article_form">
+		<form method="POST" class="common_input" enctype="multipart/form-data" action="./test.php" onsubmit="return check_atricle_form_null(this)">
+				<label>目标url</label>
+				<input type="text"  name="target_url"><br>
+				<label><input type="checkbox" name="getDbs"> getDbs</label>
+				<label><input type="checkbox" name="getTables"> getTables</label>
+				<label><input type="checkbox" name="getColumns"> getColumns</label>
+				<br>
+				<input type="submit" value="执行" name="submit_btn">
+		</form>
+		</div>
+</body>
+
+</html>
