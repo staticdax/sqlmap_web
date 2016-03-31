@@ -9,7 +9,8 @@ $(document).ready(function(){
                 alert('error');
             },
             success: function(data){
-                var admin_lst = eval('('+data+')');
+                var admin_lst = JSON.parse(data);
+                //var admin_lst = eval('('+data+')');
                 for(var k in admin_lst["tasks"]){
                     var k_stat = admin_lst["tasks"][k];
                     $("#admin_list").append("<button class=task_button id="+k+" >"+k+":"+k_stat+"</button><br>");
@@ -36,6 +37,7 @@ $(document).ready(function(){
             },
             success: function(data){
                 $("[name=display_area]").html(data);
+                log_data = JSON.parse(data);
             }
         });
     });
@@ -51,6 +53,7 @@ $(document).ready(function(){
             },
             success: function(data){
                 $("[name=display_area]").html(data);
+                data_data = JSON.parse(data);
             }
         });
     });
@@ -66,6 +69,7 @@ $(document).ready(function(){
             },
             success: function(data){
                 $("[name=display_area]").html(data);
+                status_data = JSON.parse(data);
             }
         });
     });

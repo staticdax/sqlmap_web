@@ -2,7 +2,12 @@
 <title>
 SQLMAP_WEB Interface v0.1
 </title>
-<script src="http://lib.sinaapp.com/js/jquery/2.0.3/jquery-2.0.3.js">
+<link href="/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="/dist/js/jquery-2.2.1.js">
+<script src="/dist/js/bootstrap.min.js">
+    var log_data;
+    var data_data;
+    var status_data;
 </script>
 <body>
 	<head>
@@ -33,6 +38,12 @@ SQLMAP_WEB Interface v0.1
         </div>
         <div>
             <code name="display_area">
+                <span class="label label-default">Default</span>
+                <span class="label label-primary">Primary</span>
+                <span class="label label-success">Success</span>
+                <span class="label label-info">Info</span>
+                <span class="label label-warning">Warning</span>
+                <span class="label label-danger">Danger</span>
             </code>           
         </div>
         <div>
@@ -45,7 +56,7 @@ SQLMAP_WEB Interface v0.1
         </div>
 
 
-        <script src="./front.js"></script>
+        <script src="/dist/js/front.js"></script>
 </body>
 
 </html>
