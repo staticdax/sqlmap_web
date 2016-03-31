@@ -13,7 +13,8 @@ $(document).ready(function(){
                 //var admin_lst = eval('('+data+')');
                 for(var k in admin_lst["tasks"]){
                     var k_stat = admin_lst["tasks"][k];
-                    $("#admin_list").append("<button class=task_button id="+k+" >"+k+":"+k_stat+"</button><br>");
+                    //$("#admin_list").append("<button class=task_button id="+k+" >"+k+":"+k_stat+"</button><br>");
+                    $("[name=task_dropdown_list]").append("<li><a href='#' class=task_button id="+k+" >"+k+":"+k_stat+"</a></li>");
                 };
             }
         });
@@ -36,8 +37,14 @@ $(document).ready(function(){
                 alert('error');
             },
             success: function(data){
-                $("[name=display_area]").html(data);
                 log_data = JSON.parse(data);
+                $("ul[name=display_area]").html("");
+                for(var k in log_data["log"]){
+                    single_log = log_data["log"][k];
+                    if(single_log["level"]==="INFO"){
+                        $("ul[name=display_area]").append("<li class='list-group-item list-group-item-info'>"+single_log['level']+":"+single_log['message']+"</li>");
+                    }
+                };
             }
         });
     });

@@ -3,16 +3,17 @@
 SQLMAP_WEB Interface v0.1
 </title>
 <link href="/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="/dist/js/jquery-2.2.1.js">
+<script src="/dist/js/jquery-2.2.1.js"></script>
 <script src="/dist/js/bootstrap.min.js">
     var log_data;
     var data_data;
     var status_data;
 </script>
+
+<head>
+    <center>SQLMAP_WEB Interface v0.1</center>
+</head>
 <body>
-	<head>
-        <center>SQLMAP_WEB Interface v0.1</center>
-	</head>
 	<hr>
         <div class="">
             <form method="POST" enctype="multipart/form-data" action="" id="form1">
@@ -27,7 +28,21 @@ SQLMAP_WEB Interface v0.1
                 <input type="submit" value="执行" name="submit_btn">
             </label>
         </div>
-
+        <div name="task_list_area">
+            <hr>
+            <div id="admin_list">
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdonwMenu1" 
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Task_list
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu3" name="task_dropdown_list">
+                </ul>
+            </div>
+            <hr>
+        </div>
         <div>
             <label>current_task_id:</label>
             <label id="current_task_id"></label>
@@ -37,22 +52,10 @@ SQLMAP_WEB Interface v0.1
             <button name="scan_status">scan_status</button>
         </div>
         <div>
-            <code name="display_area">
-                <span class="label label-default">Default</span>
-                <span class="label label-primary">Primary</span>
-                <span class="label label-success">Success</span>
-                <span class="label label-info">Info</span>
-                <span class="label label-warning">Warning</span>
-                <span class="label label-danger">Danger</span>
-            </code>           
-        </div>
-        <div>
-            <br>
-            <label>admin_list</label>
-            <hr>
-            <div id="admin_list">
-            </div>
-            <hr>
+            <div name="display_area">
+                <ul class="list-group" name="display_area">
+                </ul>
+            </div>           
         </div>
 
 
