@@ -45,6 +45,9 @@ $(document).ready(function(){
                     if(single_log["level"]==="INFO"){
                         $("ul[name=display_area]").append("<li class='list-group-item list-group-item-info'>"+single_log['level']+":"+single_log['message']+"</li>");
                     }
+                    if(single_log["level"]==="CRITICAL"){
+                        $("ul[name=display_area]").append("<li class='list-group-item list-group-item-warning'>"+single_log['level']+":"+single_log['message']+"</li>");
+                    }
                 };
             }
         });
@@ -60,7 +63,7 @@ $(document).ready(function(){
                 alert('error');
             },
             success: function(data){
-                $("[name=display_area]").html(data);
+                $("[name=display_area]").html("<code>"+data+"</code>");
                 data_data = JSON.parse(data);
             }
         });

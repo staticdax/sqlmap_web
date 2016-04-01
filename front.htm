@@ -1,6 +1,6 @@
 <html>
 <title>
-SQLMAP_WEB Interface v0.1
+    SQLMAP_WEB Interface v0.1
 </title>
 <link href="/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="/dist/js/jquery-2.2.1.js"></script>
@@ -11,21 +11,78 @@ SQLMAP_WEB Interface v0.1
 </script>
 
 <head>
-    <center>SQLMAP_WEB Interface v0.1</center>
+    <center><h4>SQLMAP_WEB Interface v0.1</h4></center>
 </head>
 <body>
 	<hr>
+    <div class="container">
         <div class="">
             <form method="POST" enctype="multipart/form-data" action="" id="form1">
-                <label>目标url</label>
-                <input type="text"  name="target_url"><br>
-                <label><input type="checkbox" name="getDbs"> getDbs</label>
-              	<label><input type="checkbox" name="getTables"> getTables</label>
-                <label><input type="checkbox" name="getColumns"> getColumns</label>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon">Target URL</div>
+                        <input type="text" class="form-control"  name="target_url"><br>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Enumerationa</div>
+                    <div class="panel-body form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-offset-1"><input type="checkbox" name="getDbs"> getDbs</label>
+                          	<label><input type="checkbox" name="getTables"> getTables</label>
+                            <label><input type="checkbox" name="getColumns"> getColumns</label>
+                            <label><input type="checkbox" name="isDba"> isDba</label>
+                        </div>  
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Request</div>
+                    <div class="panel-body form-horizontal">
+                        <div class="form-group">
+                            <div class="col-sm-2 col-sm-offset-2">
+                                <div class="input-group">
+                                    <div class="input-group-addon">threads</div>
+                                    <input class="form-control" name="threads" value="1">
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="input-group">
+                                    <div class="input-group-addon">delay</div>
+                                    <input class="form-control" name="delay" value="0">
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="input-group">
+                                    <div class="input-group-addon">timeout</div>
+                                    <input class="form-control" name="timeout" value="10">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">user-agent</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" name="user-agent" placeholder="none">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="refererInput" class="col-sm-2 control-label">referer</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" id="refererInput" name="referer" placeholder="none">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">cookie</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" rows="2" placeholder="cookie"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <br>
             </form>
             <label>
-                <input type="submit" value="执行" name="submit_btn">
+                <input type="submit" class="btn btn-default" value="执行" name="submit_btn">
             </label>
         </div>
         <div name="task_list_area">
@@ -47,9 +104,9 @@ SQLMAP_WEB Interface v0.1
             <label>current_task_id:</label>
             <label id="current_task_id"></label>
             <br>
-            <button name="scan_log">scan_log</button>
-            <button name="scan_data">scan_data</button>
-            <button name="scan_status">scan_status</button>
+            <button class="btn btn-default" name="scan_log">scan_log</button>
+            <button class="btn btn-default" name="scan_data">scan_data</button>
+            <button class="btn btn-default" name="scan_status">scan_status</button>
         </div>
         <div>
             <div name="">
@@ -58,7 +115,7 @@ SQLMAP_WEB Interface v0.1
             </div>           
         </div>
 
-
+    </div>
         <script src="/dist/js/front.js"></script>
 </body>
 

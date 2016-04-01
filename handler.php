@@ -14,6 +14,10 @@
 
 	$target_url = $_POST['target_url'];
 
+	if(!is_null($_POST['isDba'])){
+	    $api_request['isDba'] = True;
+    }
+
 	if(!is_null($_POST['getDbs'])){
 	    $api_request['getDbs'] = True;
 	}
@@ -25,6 +29,33 @@
 	if(!is_null($_POST['getColumns'])){
     	$api_request['getColumns'] = True;
 	}		
+
+    
+	if(!is_null($_POST['referer'])){
+        $api_request['referer'] = $_POST['referer'];
+	}
+
+	if(!is_null($_POST['user-agent'])){
+        $api_request['user-agent'] = $_POST['user-agent'];
+	}
+
+
+	if(!is_null($_POST['cookie'])){
+        $api_request['cookie'] = $_POST['cookie'];
+    }
+
+
+	if(!is_null($_POST['threads'])){
+        $api_request['threads'] = $_POST['threads'];
+    }
+
+	if(!is_null($_POST['delay'])){
+        $api_request['delay'] = $_POST['delay'];
+    }
+
+	if(!is_null($_POST['timeout'])){
+        $api_request['timeout'] = $_POST['timeout'];
+    }
 
     //echo($_POST['target_url']);
     //echo("<br>");
