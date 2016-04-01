@@ -10,6 +10,7 @@ $(document).ready(function(){
             },
             success: function(data){
                 var admin_lst = JSON.parse(data);
+                $("[name=task_dropdown_list]").html("");
                 //var admin_lst = eval('('+data+')');
                 for(var k in admin_lst["tasks"]){
                     var k_stat = admin_lst["tasks"][k];
@@ -75,7 +76,7 @@ $(document).ready(function(){
                 alert('error');
             },
             success: function(data){
-                $("[name=display_area]").html(data);
+                $("ul[name=display_area]").html(data);
                 status_data = JSON.parse(data);
             }
         });
@@ -93,7 +94,7 @@ $(document).ready(function(){
                     alert('error');
                 },
                 success:function(data){
-                    $("[name=display_area]").html(data);
+                    $("ul[name=display_area]").html(data);
                     get_admin_list();
                 }
             });
