@@ -46,15 +46,15 @@
 
 
 	if(!is_null($_POST['threads'])){
-        $api_request['threads'] = $_POST['threads'];
+        $api_request['threads'] = (int)$_POST['threads'];
     }
 
 	if(!is_null($_POST['delay'])){
-        $api_request['delay'] = $_POST['delay'];
+        $api_request['delay'] = (int)$_POST['delay'];
     }
 
 	if(!is_null($_POST['timeout'])){
-        $api_request['timeout'] = $_POST['timeout'];
+        $api_request['timeout'] = (int)$_POST['timeout'];
     }
 
     //echo($_POST['target_url']);
