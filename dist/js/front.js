@@ -69,6 +69,21 @@ $(document).ready(function(){
         });
     });
 
+    $("[name=flush-btn").click(function(){
+        $.ajax({
+            url:'flush_tasks.php',
+            type: 'get',
+            async: true,
+            error: function(){
+                alert('error');
+            },
+            success: function(data){
+                alert('flush success: '+data);
+                get_admin_list();
+            }
+        });
+    });
+                
     $("[name=scan_status]").click(function(){
         $.ajax({
             url:'scan_status.php',
