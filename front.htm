@@ -85,11 +85,9 @@
                 <input type="submit" class="btn btn-default" value="执行" name="submit_btn">
             </label>
         </div>
-        <div name="task_list_area">
+        <div name="" class="row">
             <hr>
-            <div id="admin_list">
-            </div>
-            <div class="dropdown">
+            <div class="dropdown col-sm-2">
                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdonwMenu1" 
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     Task_list
@@ -97,6 +95,9 @@
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu3" name="task_dropdown_list">
                 </ul>
+            </div>
+            <div class="col-sm-2">
+                <button type="button" class="btn btn-danger" name="flush-btn">Delete All Tasks</button>
             </div>
             <hr>
         </div>
@@ -116,7 +117,7 @@
         </div>
 
     </div>
-        <script src="/dist/js/front.js"></script>
+        <script src="./dist/js/front.js"></script>
 </body>
 
 </html>
