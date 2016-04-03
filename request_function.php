@@ -17,7 +17,7 @@ include "./api_serv_conf.php";
     //echo(admin_list());
 
     function admin_flush(){
-        $result = file_get_contents($GLOBALS['url'].'admin/0/flush');
+        $result = file_get_contents($GLOBALS['url'].'/admin/0/flush');
         return $result;
     }
 
