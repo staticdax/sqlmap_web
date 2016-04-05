@@ -18,7 +18,7 @@ A simple sqlmap web interface
 
 #调试
 ## 服务器端
-- `sqlmapapi -s -H 0.0.0.0` 默认输出日志
+`sqlmapapi -s -H 0.0.0.0` 默认输出日志
 ## 命令行客户端
 `sqlmapapi -c -H [API服务器IP]`
 
