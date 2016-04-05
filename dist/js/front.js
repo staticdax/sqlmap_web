@@ -69,7 +69,7 @@ $(document).ready(function(){
         });
     });
 
-    $("[name=flush-btn").click(function(){
+    $("[name=flush_task_btn").click(function(){
         $.ajax({
             url:'flush_tasks.php',
             type: 'get',
@@ -78,7 +78,12 @@ $(document).ready(function(){
                 alert('error');
             },
             success: function(data){
-                alert('flush success: '+data);
+                var flush_data = JSON.parse(data);
+                if(flush_data["success"]==true){
+                    $.notify("All tasks flushed.", "success");
+                }else{
+                    $.notify("Unknow error occured", "warn");
+                }
                 get_admin_list();
             }
         });
@@ -100,7 +105,7 @@ $(document).ready(function(){
         });
     });
 
-    $("input[name=submit_btn]").click(function(){
+    $("input[name=submit_task_btn]").click(function(){
         var formParam = $("#form1").serialize();
         if($("[name=target_url]").val()!=""){
             $.ajax({
@@ -113,6 +118,12 @@ $(document).ready(function(){
                 },
                 success:function(data){
                     $("ul[name=display_area]").html(data);
+                    var task_data = JSON.parse(data);
+                    if(task_data["success"]==true){
+                        $.notify("Task added", "success");
+                    }else{
+                        $.notify("Unknow error occured", "warn");
+                    }
                     get_admin_list();
                 }
             });

@@ -2,88 +2,122 @@
 <title>
     SQLMAP_WEB Interface v0.1
 </title>
-<link href="/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="/dist/js/jquery-2.2.1.js"></script>
-<script src="/dist/js/bootstrap.min.js">
+<link href="./dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="./dist/js/jquery-2.2.1.js"></script>
+<script src="./dist/js/bootstrap.min.js">
     var log_data;
     var data_data;
     var status_data;
 </script>
+<script src="./dist/js/notify.js"></script>
 
 <head>
     <center><h4>SQLMAP_WEB Interface v0.1</h4></center>
 </head>
 <body>
-	<hr>
+    <div class="modal fade" id="flush_confirm_modal" tabindex="-1" role="dialog" arai-labelledby="flush_confirm_modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">Notice</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure to flush all tasks?</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger" name="flush_task_btn" data-dismiss="modal">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="new_task_modal" tabindex="-1" role="dialog" aria-labelledby="new_task_modal">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">New task</h4>
+                </div>
+                <div class="modal-body">
+                    <p> Content </p>
+                    <form method="POST" enctype="multipart/form-data" action="" id="form1">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon">Target URL</div>
+                                <input type="text" class="form-control"  name="target_url"><br>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Enumeration</div>
+                            <div class="panel-body form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-sm-offset-1"><input type="checkbox" name="getDbs"> getDbs</label>
+                                    <label><input type="checkbox" name="getTables"> getTables</label>
+                                    <label><input type="checkbox" name="getColumns"> getColumns</label>
+                                    <label><input type="checkbox" name="isDba"> isDba</label>
+                                </div>  
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Request</div>
+                            <div class="panel-body form-horizontal">
+                                <div class="form-group">
+                                    <div class="col-sm-2 col-sm-offset-2">
+                                        <div class="input-group">
+                                            <div class="input-group-addon">threads</div>
+                                            <input class="form-control" name="threads" value="1">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="input-group">
+                                            <div class="input-group-addon">delay</div>
+                                            <input class="form-control" name="delay" value="0">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="input-group">
+                                            <div class="input-group-addon">timeout</div>
+                                            <input class="form-control" name="timeout" value="10">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">user-agent</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" name="user-agent" placeholder="none">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="refererInput" class="col-sm-2 control-label">referer</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" id="refererInput" name="referer" placeholder="none">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">cookie</label>
+                                    <div class="col-sm-10">
+                                        <textarea class="form-control" rows="2" placeholder="cookie"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                    </form>
+                </div><!-- modal body -->
+                <div class="modal-footer">
+                    <input type="submit" class="btn btn-success" value="Run" name="submit_task_btn" data-dismiss="modal">
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
     <div class="container">
         <div class="">
-            <form method="POST" enctype="multipart/form-data" action="" id="form1">
-                <div class="form-group">
-                    <div class="input-group">
-                        <div class="input-group-addon">Target URL</div>
-                        <input type="text" class="form-control"  name="target_url"><br>
-                    </div>
-                </div>
-
-                <div class="panel panel-default">
-                    <div class="panel-heading">Enumeration</div>
-                    <div class="panel-body form-horizontal">
-                        <div class="form-group">
-                            <label class="col-sm-offset-1"><input type="checkbox" name="getDbs"> getDbs</label>
-                          	<label><input type="checkbox" name="getTables"> getTables</label>
-                            <label><input type="checkbox" name="getColumns"> getColumns</label>
-                            <label><input type="checkbox" name="isDba"> isDba</label>
-                        </div>  
-                    </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">Request</div>
-                    <div class="panel-body form-horizontal">
-                        <div class="form-group">
-                            <div class="col-sm-2 col-sm-offset-2">
-                                <div class="input-group">
-                                    <div class="input-group-addon">threads</div>
-                                    <input class="form-control" name="threads" value="1">
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="input-group">
-                                    <div class="input-group-addon">delay</div>
-                                    <input class="form-control" name="delay" value="0">
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="input-group">
-                                    <div class="input-group-addon">timeout</div>
-                                    <input class="form-control" name="timeout" value="10">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">user-agent</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" name="user-agent" placeholder="none">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="refererInput" class="col-sm-2 control-label">referer</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" id="refererInput" name="referer" placeholder="none">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">cookie</label>
-                            <div class="col-sm-10">
-                                <textarea class="form-control" rows="2" placeholder="cookie"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <br>
-            </form>
-            <label>
-                <input type="submit" class="btn btn-default" value="执行" name="submit_btn">
-            </label>
+            <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#new_task_modal">New task</button>
         </div>
         <div name="" class="row">
             <hr>
@@ -97,9 +131,8 @@
                 </ul>
             </div>
             <div class="col-sm-2">
-                <button type="button" class="btn btn-danger" name="flush-btn">Delete All Tasks</button>
+                <button type="button" class="btn btn-danger" name="flush_btn" data-toggle="modal" data-target="#flush_confirm_modal">Delete All Tasks</button>
             </div>
-            <hr>
         </div>
         <div>
             <label>current_task_id:</label>
@@ -117,7 +150,7 @@
         </div>
 
     </div>
-        <script src="./dist/js/front.js"></script>
+    <script src="./dist/js/front.js"></script>
 </body>
 
 </html>
