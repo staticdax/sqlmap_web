@@ -64,7 +64,7 @@ $(document).ready(function(){
             },
             success: function(data){
                 $("[name=display_area]").html("<code>"+data+"</code>");
-                data_data = JSON.parse(data);
+                result_data = JSON.parse(data);
             }
         });
     });
