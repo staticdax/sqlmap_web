@@ -45,8 +45,14 @@ $(document).ready(function(){
                     if(single_log["level"]==="INFO"){
                         $("ul[name=display_area]").append("<li class='list-group-item list-group-item-info'>"+single_log['level']+":"+single_log['message']+"</li>");
                     }
-                    if(single_log["level"]==="CRITICAL"){
+                    else if(single_log["level"]==="WARNING"){
                         $("ul[name=display_area]").append("<li class='list-group-item list-group-item-warning'>"+single_log['level']+":"+single_log['message']+"</li>");
+                    }
+                    else if(single_log["level"]==="CRITICAL"){
+                        $("ul[name=display_area]").append("<li class='list-group-item list-group-item-danger'>"+single_log['level']+":"+single_log['message']+"</li>");
+                    }
+                    else{
+                        $("ul[name=display_area]").append("<li class='list-group-item list-group-item-danger'>"+single_log['level']+":"+single_log['message']+"</li>");
                     }
                 };
             }
