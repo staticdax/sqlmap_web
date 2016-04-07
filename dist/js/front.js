@@ -9,7 +9,6 @@ $(document).ready(function(){
                 alert('error');
             },
             success: function(data){
-                alert(data);
                 var admin_lst = JSON.parse(data);
                 $("[name=task_dropdown_list]").html("");
                 //var admin_lst = eval('('+data+')');
@@ -118,7 +117,6 @@ $(document).ready(function(){
                     alert('error');
                 },
                 success:function(data){
-                    alert(data);
                     $("ul[name=display_area]").html(data);
                     var task_data = JSON.parse(data);
                     if(task_data["success"]==true){
