@@ -2,14 +2,13 @@ $(document).ready(function(){
 
     function get_admin_list(){
         $.ajax({
-            url:'/handle/admin_list.php',
+            url:'admin_list.php',
             type:'get',
             async:true,
             error: function(){
                 alert('error');
             },
             success: function(data){
-                alert(data);
                 var admin_lst = JSON.parse(data);
                 $("[name=task_dropdown_list]").html("");
                 //var admin_lst = eval('('+data+')');
@@ -31,7 +30,7 @@ $(document).ready(function(){
     
     $("[name=scan_log]").click(function(){
         $.ajax({
-            url:'/handle/scan_log.php',
+            url:'scan_log.php',
             type: 'post',
             data: 'taskid='+current_task_id,
             async: true,
@@ -56,7 +55,7 @@ $(document).ready(function(){
 
     $("[name=scan_data]").click(function(){
         $.ajax({
-            url:'/handle/scan_data.php',
+            url:'scan_data.php',
             type: 'post',
             data: 'taskid='+current_task_id,
             async: true,
@@ -72,7 +71,7 @@ $(document).ready(function(){
 
     $("[name=flush_task_btn").click(function(){
         $.ajax({
-            url:'/handle/flush_tasks.php',
+            url:'flush_tasks.php',
             type: 'get',
             async: true,
             error: function(){
@@ -92,7 +91,7 @@ $(document).ready(function(){
                 
     $("[name=scan_status]").click(function(){
         $.ajax({
-            url:'/handle/scan_status.php',
+            url:'scan_status.php',
             type: 'post',
             data: 'taskid='+current_task_id,
             async: true,
@@ -110,7 +109,7 @@ $(document).ready(function(){
         var formParam = $("#form1").serialize();
         if($("[name=target_url]").val()!=""){
             $.ajax({
-                url:'/handle/handler.php',
+                url:'handler.php',
                 type:'post',
                 data:formParam,
                 async:true,
@@ -118,7 +117,6 @@ $(document).ready(function(){
                     alert('error');
                 },
                 success:function(data){
-                    alert(data);
                     $("ul[name=display_area]").html(data);
                     var task_data = JSON.parse(data);
                     if(task_data["success"]==true){
@@ -135,20 +133,20 @@ $(document).ready(function(){
         }
     });
 
-    //$("input[name=ajax_test]").click(function(){
-        //$.ajax({
-            //url:'hello.php',
-            //type:'post',
-            //data:'test=hello',
-            //async:true,
-            //error: function(){
-                //alert('error');
-            //},
-            //success:function(data){
-                //$("#ajax_result").html(data);
-            //}
-        //});
-    //});
+    $("input[name=ajax_test]").click(function(){
+        $.ajax({
+            url:'hello.php',
+            type:'post',
+            data:'test=hello',
+            async:true,
+            error: function(){
+                alert('error');
+            },
+            success:function(data){
+                $("#ajax_result").html(data);
+            }
+        });
+    });
 
 
     get_admin_list();
