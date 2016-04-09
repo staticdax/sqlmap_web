@@ -15,15 +15,16 @@ $(document).ready(function(){
                 for(var k in admin_lst["tasks"]){
                     var k_stat = admin_lst["tasks"][k];
                     //$("#admin_list").append("<button class=task_button id="+k+" >"+k+":"+k_stat+"</button><br>");
-                    $("[name=task_dropdown_list]").append("<li><a href='#' class=task_button id="+k+" >"+k+":"+k_stat+"</a></li>");
+                    // $("[name=task_dropdown_list]").append("<li><a href='#' class=task_button id="+k+" >"+k+":"+k_stat+"</a></li>");
+                    $("[name=task-list-group]").append("<a href='#' class='list-group-item task_button' id="+k+" >"+k+":"+k_stat+"</a>");
                 };
             }
         });
     };
 
-    var current_task_id = "";
 
     $("body").on("click",".task_button",function(){
+        //just for debug, will be deleted
         $("#current_task_id").html(this.id);
         current_task_id = this.id;
     });
@@ -64,6 +65,7 @@ $(document).ready(function(){
             },
             success: function(data){
                 $("[name=display_area]").html("<code>"+data+"</code>");
+                //test_var = data;
                 result_data = JSON.parse(data);
             }
         });
@@ -132,6 +134,26 @@ $(document).ready(function(){
             alert("target_url cannot be blank");
         }
     });
+    
+    $("a.result_data_button").click(function(){
+        try{
+            $.ajax({
+                url:'/handle/scan_result.php',
+                type: 'post',
+                data: 'taskid='+current_task_id+'&content_type='+this.id,
+                async: true,
+                error: function(){
+                    $.notify("Error occurred when requesting tech info.", "warn");
+                },
+                success: function(data){
+                    $("ul[name=display_area]").html(data);
+                }
+            });
+        }
+        catch(err){
+            $.notify("Error occured when requesting techniques info.", "warn");
+        }
+    }); 
 
     //$("input[name=ajax_test]").click(function(){
         //$.ajax({
