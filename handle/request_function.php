@@ -1,5 +1,5 @@
 <?php
-include "./api_serv_conf.php";
+include "../include/api_serv_conf.php";
 
     function new_task(){
         $result = file_get_contents($GLOBALS['url'].'/task/new');

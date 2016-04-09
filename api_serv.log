@@ -1,0 +1,37 @@
+[23:17:42] [INFO] Running REST-JSON API server at '127.0.0.1:8775'..
+[23:17:42] [INFO] Admin ID: e777b90e9333e23f187661de2f1feecf
+[23:17:42] [DEBUG] IPC database: /tmp/sqlmapipc-DsSNKm
+[23:17:42] [DEBUG] REST-JSON API server connected to IPC database
+[23:17:51] [DEBUG] [0] Listed task pool (127.0.0.1)
+[23:18:01] [DEBUG] Created new task: '06fb91da20fe6fd6'
+[23:18:01] [DEBUG] [06fb91da20fe6fd6] Started scan
+[23:18:03] [DEBUG] [06fb91da20fe6fd6] Retrieved scan status
+[23:18:03] [DEBUG] [0] Listed task pool (127.0.0.1)
+[23:18:05] [DEBUG] [06fb91da20fe6fd6] Retrieved scan log messages
+[23:18:07] [DEBUG] [06fb91da20fe6fd6] Retrieved scan data and error messages
+[23:18:09] [DEBUG] [06fb91da20fe6fd6] Retrieved scan status
+[23:20:06] [DEBUG] [06fb91da20fe6fd6] Retrieved scan status
+[23:20:06] [DEBUG] [0] Listed task pool (127.0.0.1)
+[23:20:35] [DEBUG] [06fb91da20fe6fd6] Retrieved scan log messages
+[23:20:39] [DEBUG] [06fb91da20fe6fd6] Retrieved scan log messages
+[23:20:48] [DEBUG] [06fb91da20fe6fd6] Retrieved scan log messages
+[23:20:49] [DEBUG] [06fb91da20fe6fd6] Retrieved scan data and error messages
+[23:20:50] [DEBUG] [06fb91da20fe6fd6] Retrieved scan status
+[23:20:50] [DEBUG] [06fb91da20fe6fd6] Retrieved scan data and error messages
+[23:20:51] [DEBUG] [06fb91da20fe6fd6] Retrieved scan log messages
+[23:21:29] [DEBUG] [06fb91da20fe6fd6] Retrieved scan status
+[23:21:29] [DEBUG] [0] Listed task pool (127.0.0.1)
+[23:21:30] [DEBUG] [06fb91da20fe6fd6] Retrieved scan log messages
+[23:21:31] [DEBUG] [06fb91da20fe6fd6] Retrieved scan data and error messages
+[23:21:32] [DEBUG] [06fb91da20fe6fd6] Retrieved scan status
+[23:21:33] [DEBUG] [06fb91da20fe6fd6] Retrieved scan log messages
+[23:21:33] [DEBUG] [06fb91da20fe6fd6] Retrieved scan data and error messages
+[23:21:34] [DEBUG] [06fb91da20fe6fd6] Retrieved scan status
+[23:21:34] [DEBUG] [06fb91da20fe6fd6] Retrieved scan data and error messages
+[23:21:35] [DEBUG] [06fb91da20fe6fd6] Retrieved scan log messages
+[23:21:41] [DEBUG] [06fb91da20fe6fd6] Retrieved scan log messages
+[23:22:04] [DEBUG] [06fb91da20fe6fd6] Retrieved scan data and error messages
+[23:22:04] [DEBUG] [06fb91da20fe6fd6] Retrieved scan status
+[23:22:05] [DEBUG] [06fb91da20fe6fd6] Retrieved scan log messages
+[23:22:05] [DEBUG] [06fb91da20fe6fd6] Retrieved scan data and error messages
+[23:22:05] [DEBUG] [06fb91da20fe6fd6] Retrieved scan status

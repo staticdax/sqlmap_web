@@ -1,6 +1,5 @@
 <?php
     include './request_function.php';
-	//$api_request = array('url'=>'','getDbs'=>False,'getTables'=>False,'getColumns'=>False);
 
     function clean($text)
     {
