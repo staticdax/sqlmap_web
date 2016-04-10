@@ -9,18 +9,17 @@ A simple sqlmap web interface
 
 #启动
 - 启动sqlmapapi服务器
-~~`sqlmapapi -s -H 0.0.0.0`~~
-~~`-s` 启动为sqlmapapi server~~
-~~`-H` API服务器IP~~
+`./start_api_serv.sh`
 
 - 启动web服务
-在`/sqlmap_web/api_serv_conf.php`的IP和port改为实际sqlmapapi服务器的IP（默认127.0.0.1）和端口（默认8775）
+* 在`/sqlmap_web/api_serv_conf.php`的IP和port改为实际sqlmapapi服务器的IP（默认127.0.0.1）和端口（默认8775）
+* 启动Apache
 
 #调试
 ## 服务器端
-~~`sqlmapapi -s -H 0.0.0.0` 默认输出日志~~
+sqlmapapi 服务器端在后台运行，日志输出到`api_serv.log`
 ## 命令行客户端
-`sqlmapapi -c -H [API服务器IP]`
+`sqlmapapi -c -H <API服务器IP>`
 
 #目录结构说明
 - `sqlmap_web/`
