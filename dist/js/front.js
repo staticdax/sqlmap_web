@@ -10,7 +10,7 @@ $(document).ready(function(){
             },
             success: function(data){
                 var admin_lst = JSON.parse(data);
-                $("[name=task_dropdown_list]").html("");
+                $("[name=task-list-group]").html("");
                 //var admin_lst = eval('('+data+')');
                 for(var k in admin_lst["tasks"]){
                     var k_stat = admin_lst["tasks"][k];
@@ -26,7 +26,9 @@ $(document).ready(function(){
     $("body").on("click",".task_button",function(){
         //just for debug, will be deleted
         $("#current_task_id").html(this.id);
+        get_admin_list();
         current_task_id = this.id;
+        $("button[name=scan_log]").click()
     });
     
     $("[name=scan_log]").click(function(){
@@ -125,6 +127,7 @@ $(document).ready(function(){
                     alert('error');
                 },
                 success:function(data){
+                    //debug code, to be deleted
                     $("ul[name=display_area]").html(data);
                     var task_data = JSON.parse(data);
                     if(task_data["success"]==true){
@@ -141,7 +144,7 @@ $(document).ready(function(){
         }
     });
     
-    $("a.result_data_button").click(function(){
+    $("a.result_data_button[name=tech_info]").click(function(){
         try{
             $.ajax({
                 url:'/handle/scan_result.php',
@@ -160,6 +163,81 @@ $(document).ready(function(){
             $.notify("Error occured when requesting techniques info.", "warn");
         }
     }); 
+
+    $("a.result_data_button[name=db_info]").click(function(){
+        $("ul[name=display_area]").html("");
+        try{
+            $.ajax({
+                url:'/handle/scan_result.php',
+                type: 'post',
+                data: 'taskid='+current_task_id+'&content_type=11', //dbs
+                async: true,
+                error: function(){
+                    $.notify("Error occurred when requesting db info.", "warn");
+                },
+                success: function(data){
+                    $("ul[name=display_area]").append("database: "+data+"</br>");
+                }
+            });
+        }
+        catch(err){
+            $.notify("Error occured when requesting techniques info.", "warn");
+        }
+
+        try{
+            $.ajax({
+                url:'/handle/scan_result.php',
+                type: 'post',
+                data: 'taskid='+current_task_id+'&content_type=12', //tbls
+                async: true,
+                error: function(){
+                    $.notify("Error occurred when requesting db info.", "warn");
+                },
+                success: function(data){
+                    $("ul[name=display_area]").append("Tables: "+data+"</br>");
+                }
+            });
+        }
+        catch(err){
+            $.notify("Error occured when requesting techniques info.", "warn");
+        } 
+
+        try{
+            $.ajax({
+                url:'/handle/scan_result.php',
+                type: 'post',
+                data: 'taskid='+current_task_id+'&content_type=13', //cols
+                async: true,
+                error: function(){
+                    $.notify("Error occurred when requesting db info.", "warn");
+                },
+                success: function(data){
+                    $("ul[name=display_area]").append("Columns: "+data+"</br>");
+                }
+            });
+        }
+        catch(err){
+            $.notify("Error occured when requesting techniques info.", "warn");
+        }
+
+        try{
+            $.ajax({
+                url:'/handle/scan_result.php',
+                type: 'post',
+                data: 'taskid='+current_task_id+'&content_type=14', //schema
+                async: true,
+                error: function(){
+                    $.notify("Error occurred when requesting db info.", "warn");
+                },
+                success: function(data){
+                    $("ul[name=display_area]").append(data);
+                }
+            });
+        }
+        catch(err){
+            $.notify("Error occured when requesting techniques info.", "warn");
+        }                              
+    });
 
     //$("input[name=ajax_test]").click(function(){
         //$.ajax({
