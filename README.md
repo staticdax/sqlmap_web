@@ -9,11 +9,11 @@ A simple sqlmap web interface
 
 #启动
 - 启动sqlmapapi服务器
-`./start_api_serv.sh`
+  `./start_api_serv.sh`
 
 - 启动web服务
-* 在`/sqlmap_web/api_serv_conf.php`的IP和port改为实际sqlmapapi服务器的IP（默认127.0.0.1）和端口（默认8775）
-* 启动Apache
+  * 在`/sqlmap_web/api_serv_conf.php`的IP和port改为实际sqlmapapi服务器的IP（默认127.0.0.1）和端口（默认8775）
+  * 启动Apache
 
 #调试
 ## 服务器端
