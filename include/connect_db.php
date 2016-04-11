@@ -1,6 +1,5 @@
 <?php
 //include '/var/www/sqlmap_web/include/myDB.php';
-include './myDB.php';
 
 //$handle = fopen("/var/www/sqlmap_web/api_serv.log", "r");
 $handle = fopen("../api_serv.log", "r");

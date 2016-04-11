@@ -23,18 +23,25 @@ sqlmapapi 服务器端在后台运行，日志输出到`api_serv.log`
 
 #目录结构说明
 - `sqlmap_web/`
-  ~~- `api_serv_conf.php` API服务器配置~~
+  - `api_serv.log` 本地API服务器日志文件
   - `dist/` 包含前端框架bootstrap，jQuery等
-     - `/js/front.js` 一些按钮的异步请求，tasks_list, new_task等等
-  ~~- `admin_list.php` 任务列表请求~~
-  ~~- `front.htm` 前端页面~~
-  ~~- `flush_tasks.php` 清除列表请求~~
-  ~~- `handler.php` 表单数据分析，变更为JSON数据格式，发送到API服务器~~
+     - `/js/front.js` 页面的异步请求，tasks_list, new_task等等
+     - `/css/style.css` 页面css
+  - include/
+     - `api_serv_conf.php` API服务器配置
+     - `connect_db.php` 数据库连接
+  - handle/
+     - `admin_list.php` 任务列表请求
+     - `flush_tasks.php` 清除列表请求
+     - `handler.php` 表单数据分析，封装为JSON数据格式，发送到API服务器
+     - `request_function.php` 请求函数
+     - `scan_data.php` 扫描结果请求
+     - `scan_log.php` 扫描日志请求
+     - `scan_status.php` 扫描状态请求
+     - `scan_result.php` 直接向sqlmapipc数据库查询任务结果请求
   - `README.md` README文件
-  ~~- `request_function.php` 请求函数~~
-  ~~- `scan_data.php` 扫描结果请求~~
-  ~~- `scan_log.php` 扫描日志请求~~
-  ~~- `scan_status.php` 扫描状态请求~~
+  - `index.htm` 首页
+  - `start_api_serv.sh` 启动脚本
   - `set_options.txt` sqlmapapi请求参数合集，供参考
 
 
