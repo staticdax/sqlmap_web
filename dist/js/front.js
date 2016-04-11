@@ -155,7 +155,23 @@ $(document).ready(function(){
                     $.notify("Error occurred when requesting tech info.", "warn");
                 },
                 success: function(data){
-                    $("ul[name=display_area]").html(data);
+                    data = data.replace(/^\[(.*)/g,"$1");
+                    data = data.replace(/(.*)\]$/g,"$1");
+                    data = JSON.parse(data);
+                    // for unkonw reason, below regex not work
+                    // data = data.replace(/^\[(.*)\]$/g,"$1");
+                    $("ul[name=display_area]").html("");
+                    $("ul[name=display_area]").append("Back-end DBMS: "+data["dbms"]+"<br>");
+                    $("ul[name=display_area]").append("ptype: "+data["ptype"]+"<br>");
+                    $("ul[name=display_area]").append("dbms_version: "+data["dbms_version"]+"<br>");
+                    $("ul[name=display_area]").append("parameter: "+data["parameter"]+"("+data["place"]+")<br>");
+                    $("ul[name=display_area]").append("injection points: <br>");
+                    for(var d in data["data"]){
+                        $("ul[name=display_area]").append("&nbsp;&nbsp;Title: "+data["data"][d]["title"]+"<br>");
+                        $("ul[name=display_area]").append("&nbsp;&nbsp;Payload: "+data["data"][d]["title"]+"<br>");
+                        $("ul[name=display_area]").append("<br>");
+                    }
+                    $("ul[name=display_area]").append("</code>");
                 }
             });
         }
@@ -164,6 +180,8 @@ $(document).ready(function(){
         }
     }); 
 
+
+
     $("a.result_data_button[name=db_info]").click(function(){
         $("ul[name=display_area]").html("");
         try{
@@ -171,12 +189,12 @@ $(document).ready(function(){
                 url:'/handle/scan_result.php',
                 type: 'post',
                 data: 'taskid='+current_task_id+'&content_type=11', //dbs
-                async: true,
+                async: false,
                 error: function(){
                     $.notify("Error occurred when requesting db info.", "warn");
                 },
                 success: function(data){
-                    $("ul[name=display_area]").append("database: "+data+"</br>");
+                    $("ul[name=display_area]").append("database: "+data+"<br>");
                 }
             });
         }
@@ -189,12 +207,13 @@ $(document).ready(function(){
                 url:'/handle/scan_result.php',
                 type: 'post',
                 data: 'taskid='+current_task_id+'&content_type=12', //tbls
-                async: true,
+                async: false,
                 error: function(){
                     $.notify("Error occurred when requesting db info.", "warn");
                 },
                 success: function(data){
-                    $("ul[name=display_area]").append("Tables: "+data+"</br>");
+                    data = data.replace(/\"/,"").replace(/\"$/,"").replace(/\\n/g,"<br>");
+                    $("ul[name=display_area]").append("Tables: <br>"+data+"<br>");
                 }
             });
         }
@@ -212,7 +231,8 @@ $(document).ready(function(){
                     $.notify("Error occurred when requesting db info.", "warn");
                 },
                 success: function(data){
-                    $("ul[name=display_area]").append("Columns: "+data+"</br>");
+                    data = data.replace(/(?:\r\n|\r|\n)/g, '<br>')
+                    $("ul[name=display_area]").append("Columns: "+data+"<br>");
                 }
             });
         }
