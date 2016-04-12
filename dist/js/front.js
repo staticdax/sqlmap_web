@@ -22,7 +22,10 @@ $(document).ready(function(){
         });
     };
 
+    //获取任务列表
+    get_admin_list();
 
+    //选择任务,并刷新列表
     $("body").on("click",".task_button",function(){
         //just for debug, will be deleted
         $("#current_task_id").html(this.id);
@@ -31,6 +34,7 @@ $(document).ready(function(){
         $("button[name=scan_log]").click()
     });
     
+    //异步查询扫描日志
     $("[name=scan_log]").click(function(){
         $.ajax({
             url:'/handle/scan_log.php',
@@ -62,6 +66,7 @@ $(document).ready(function(){
         });
     });
 
+    //请求扫描结果原始数据
     $("[name=scan_data]").click(function(){
         $.ajax({
             url:'/handle/scan_data.php',
@@ -79,6 +84,7 @@ $(document).ready(function(){
         });
     });
 
+    //清除任务列表
     $("[name=flush_task_btn").click(function(){
         $.ajax({
             url:'/handle/flush_tasks.php',
@@ -98,7 +104,8 @@ $(document).ready(function(){
             }
         });
     });
-                
+
+    //查询扫描状态
     $("[name=scan_status]").click(function(){
         $.ajax({
             url:'/handle/scan_status.php',
@@ -115,6 +122,7 @@ $(document).ready(function(){
         });
     });
 
+    //任务提交
     $("input[name=submit_task_btn]").click(function(){
         var formParam = $("#form1").serialize();
         if($("[name=target_url]").val()!=""){
@@ -144,6 +152,7 @@ $(document).ready(function(){
         }
     });
     
+    //查询注入点信息
     $("a.result_data_button[name=tech_info]").click(function(){
         try{
             $.ajax({
@@ -180,8 +189,7 @@ $(document).ready(function(){
         }
     }); 
 
-
-
+    //查询数据库内容
     $("a.result_data_button[name=db_info]").click(function(){
         $("ul[name=display_area]").html("");
         try{
@@ -194,7 +202,11 @@ $(document).ready(function(){
                     $.notify("Error occurred when requesting db info.", "warn");
                 },
                 success: function(data){
-                    $("ul[name=display_area]").append("database: "+data+"<br>");
+                    if(data===""){
+                        $("ul[name=display_area]").append("database: `CURRENT_DB`<br>");
+                    } else {
+                        $("ul[name=display_area]").append("database: "+data+"<br>");
+                    }
                 }
             });
         }
@@ -213,7 +225,11 @@ $(document).ready(function(){
                 },
                 success: function(data){
                     data = data.replace(/\"/,"").replace(/\"$/,"").replace(/\\n/g,"<br>");
-                    $("ul[name=display_area]").append("Tables: <br>"+data+"<br>");
+                    if(data===""){
+                        $("ul[name=display_area]").append("Tables: `CURRENT_Tbl`<br>");
+                    } else {
+                        $("ul[name=display_area]").append("Tables: <br>"+data+"<br>");
+                    }
                 }
             });
         }
@@ -273,8 +289,5 @@ $(document).ready(function(){
             //}
         //});
     //});
-
-
-    get_admin_list();
 
 });
