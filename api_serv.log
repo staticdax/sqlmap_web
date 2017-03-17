@@ -1,37 +1,68 @@
-[23:17:42] [INFO] Running REST-JSON API server at '127.0.0.1:8775'..
-[23:17:42] [INFO] Admin ID: e777b90e9333e23f187661de2f1feecf
-[23:17:42] [DEBUG] IPC database: /tmp/sqlmapipc-DsSNKm
-[23:17:42] [DEBUG] REST-JSON API server connected to IPC database
-[23:17:51] [DEBUG] [0] Listed task pool (127.0.0.1)
-[23:18:01] [DEBUG] Created new task: '06fb91da20fe6fd6'
-[23:18:01] [DEBUG] [06fb91da20fe6fd6] Started scan
-[23:18:03] [DEBUG] [06fb91da20fe6fd6] Retrieved scan status
-[23:18:03] [DEBUG] [0] Listed task pool (127.0.0.1)
-[23:18:05] [DEBUG] [06fb91da20fe6fd6] Retrieved scan log messages
-[23:18:07] [DEBUG] [06fb91da20fe6fd6] Retrieved scan data and error messages
-[23:18:09] [DEBUG] [06fb91da20fe6fd6] Retrieved scan status
-[23:20:06] [DEBUG] [06fb91da20fe6fd6] Retrieved scan status
-[23:20:06] [DEBUG] [0] Listed task pool (127.0.0.1)
-[23:20:35] [DEBUG] [06fb91da20fe6fd6] Retrieved scan log messages
-[23:20:39] [DEBUG] [06fb91da20fe6fd6] Retrieved scan log messages
-[23:20:48] [DEBUG] [06fb91da20fe6fd6] Retrieved scan log messages
-[23:20:49] [DEBUG] [06fb91da20fe6fd6] Retrieved scan data and error messages
-[23:20:50] [DEBUG] [06fb91da20fe6fd6] Retrieved scan status
-[23:20:50] [DEBUG] [06fb91da20fe6fd6] Retrieved scan data and error messages
-[23:20:51] [DEBUG] [06fb91da20fe6fd6] Retrieved scan log messages
-[23:21:29] [DEBUG] [06fb91da20fe6fd6] Retrieved scan status
-[23:21:29] [DEBUG] [0] Listed task pool (127.0.0.1)
-[23:21:30] [DEBUG] [06fb91da20fe6fd6] Retrieved scan log messages
-[23:21:31] [DEBUG] [06fb91da20fe6fd6] Retrieved scan data and error messages
-[23:21:32] [DEBUG] [06fb91da20fe6fd6] Retrieved scan status
-[23:21:33] [DEBUG] [06fb91da20fe6fd6] Retrieved scan log messages
-[23:21:33] [DEBUG] [06fb91da20fe6fd6] Retrieved scan data and error messages
-[23:21:34] [DEBUG] [06fb91da20fe6fd6] Retrieved scan status
-[23:21:34] [DEBUG] [06fb91da20fe6fd6] Retrieved scan data and error messages
-[23:21:35] [DEBUG] [06fb91da20fe6fd6] Retrieved scan log messages
-[23:21:41] [DEBUG] [06fb91da20fe6fd6] Retrieved scan log messages
-[23:22:04] [DEBUG] [06fb91da20fe6fd6] Retrieved scan data and error messages
-[23:22:04] [DEBUG] [06fb91da20fe6fd6] Retrieved scan status
-[23:22:05] [DEBUG] [06fb91da20fe6fd6] Retrieved scan log messages
-[23:22:05] [DEBUG] [06fb91da20fe6fd6] Retrieved scan data and error messages
-[23:22:05] [DEBUG] [06fb91da20fe6fd6] Retrieved scan status
+[10:34:10] [INFO] Running REST-JSON API server at '127.0.0.1:8775'..
+[10:34:10] [INFO] Admin ID: 5386c534db3f2f09c8b0f5582cf66636
+[10:34:10] [DEBUG] IPC database: /tmp/sqlmapipc-2kl138
+[10:34:10] [DEBUG] REST-JSON API server connected to IPC database
+[10:34:10] [DEBUG] Using adapter 'wsgiref' to run bottle
+[10:54:35] [DEBUG] Created new task: '064f8eb442c3f732'
+[10:54:35] [DEBUG] [064f8eb442c3f732] Started scan
+[10:54:35] [DEBUG] [064f8eb442c3f732] Retrieved scan status
+[10:54:35] [DEBUG] [0] Listed task pool (127.0.0.1)
+[10:54:38] [DEBUG] [064f8eb442c3f732] Retrieved scan status
+[10:54:38] [DEBUG] [0] Listed task pool (127.0.0.1)
+[10:54:38] [DEBUG] [064f8eb442c3f732] Retrieved scan log messages
+[10:54:40] [DEBUG] [064f8eb442c3f732] Retrieved scan status
+[10:54:40] [DEBUG] [0] Listed task pool (127.0.0.1)
+[10:54:40] [DEBUG] [064f8eb442c3f732] Retrieved scan log messages
+[10:54:41] [DEBUG] [064f8eb442c3f732] Retrieved scan status
+[10:54:41] [DEBUG] [0] Listed task pool (127.0.0.1)
+[10:54:41] [DEBUG] [064f8eb442c3f732] Retrieved scan log messages
+[10:54:42] [DEBUG] [064f8eb442c3f732] Retrieved scan log messages
+[10:54:42] [DEBUG] [064f8eb442c3f732] Retrieved scan status
+[10:54:42] [DEBUG] [0] Listed task pool (127.0.0.1)
+[10:54:43] [DEBUG] [064f8eb442c3f732] Retrieved scan status
+[10:54:43] [DEBUG] [0] Listed task pool (127.0.0.1)
+[10:54:43] [DEBUG] [064f8eb442c3f732] Retrieved scan log messages
+[10:54:45] [DEBUG] [064f8eb442c3f732] Retrieved scan status
+[10:54:45] [DEBUG] [0] Listed task pool (127.0.0.1)
+[10:54:45] [DEBUG] [064f8eb442c3f732] Retrieved scan log messages
+[10:54:46] [DEBUG] [064f8eb442c3f732] Retrieved scan log messages
+[10:54:46] [DEBUG] [064f8eb442c3f732] Retrieved scan status
+[10:54:46] [DEBUG] [0] Listed task pool (127.0.0.1)
+[10:54:46] [DEBUG] [064f8eb442c3f732] Retrieved scan log messages
+[10:54:46] [DEBUG] [064f8eb442c3f732] Retrieved scan status
+[10:54:46] [DEBUG] [0] Listed task pool (127.0.0.1)
+[10:54:47] [DEBUG] [064f8eb442c3f732] Retrieved scan status
+[10:54:47] [DEBUG] [0] Listed task pool (127.0.0.1)
+[10:54:47] [DEBUG] [064f8eb442c3f732] Retrieved scan log messages
+[10:54:47] [DEBUG] [064f8eb442c3f732] Retrieved scan status
+[10:54:47] [DEBUG] [0] Listed task pool (127.0.0.1)
+[10:54:47] [DEBUG] [064f8eb442c3f732] Retrieved scan log messages
+[10:54:47] [DEBUG] [064f8eb442c3f732] Retrieved scan log messages
+[10:54:47] [DEBUG] [064f8eb442c3f732] Retrieved scan status
+[10:54:47] [DEBUG] [0] Listed task pool (127.0.0.1)
+[10:54:53] [DEBUG] [064f8eb442c3f732] Retrieved scan log messages
+[10:54:56] [DEBUG] [064f8eb442c3f732] Retrieved scan status
+[10:54:59] [DEBUG] [064f8eb442c3f732] Retrieved scan data and error messages
+[10:55:02] [DEBUG] [064f8eb442c3f732] Retrieved scan log messages
+[10:55:08] [DEBUG] [064f8eb442c3f732] Retrieved scan status
+[10:55:11] [DEBUG] [064f8eb442c3f732] Retrieved scan log messages
+[10:55:11] [DEBUG] [064f8eb442c3f732] Retrieved scan status
+[10:55:11] [DEBUG] [0] Listed task pool (127.0.0.1)
+[10:55:14] [DEBUG] [064f8eb442c3f732] Retrieved scan data and error messages
+[10:55:26] [DEBUG] [064f8eb442c3f732] Retrieved scan log messages
+[10:55:29] [DEBUG] [064f8eb442c3f732] Retrieved scan status
+[10:55:34] [DEBUG] [064f8eb442c3f732] Retrieved scan data and error messages
+[10:55:45] [DEBUG] [064f8eb442c3f732] Retrieved scan log messages
+[10:57:26] [DEBUG] [064f8eb442c3f732] Retrieved scan log messages
+[10:57:29] [DEBUG] [064f8eb442c3f732] Retrieved scan log messages
+[10:57:29] [DEBUG] [064f8eb442c3f732] Retrieved scan status
+[10:57:29] [DEBUG] [0] Listed task pool (127.0.0.1)
+[10:57:30] [DEBUG] [064f8eb442c3f732] Retrieved scan status
+[10:57:30] [DEBUG] [0] Listed task pool (127.0.0.1)
+[10:57:30] [DEBUG] [064f8eb442c3f732] Retrieved scan log messages
+[10:57:33] [DEBUG] [064f8eb442c3f732] Retrieved scan status
+[10:57:34] [DEBUG] [064f8eb442c3f732] Retrieved scan status
+[10:57:34] [DEBUG] [064f8eb442c3f732] Retrieved scan status
+[10:57:35] [DEBUG] [064f8eb442c3f732] Retrieved scan data and error messages
+[10:57:46] [DEBUG] [064f8eb442c3f732] Retrieved scan status
+[10:57:48] [DEBUG] [064f8eb442c3f732] Retrieved scan data and error messages

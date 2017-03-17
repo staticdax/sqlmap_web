@@ -3,3 +3,4 @@ setpriv.sh
 revokepriv.sh
 backupacl.sh
 .idea/*
+api_serv.log
